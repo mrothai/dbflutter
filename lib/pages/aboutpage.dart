@@ -1,0 +1,59 @@
+import 'package:flutter/material.dart';
+
+class AboutPage extends StatefulWidget {
+  const AboutPage({super.key});
+
+  @override
+  State<AboutPage> createState() => _AboutPageState();
+}
+
+class _AboutPageState extends State<AboutPage> {
+  @override
+  Widget build(BuildContext context) {
+    // Map company = ModalRoute.of(context).settings.arguments;
+    final Map<String, dynamic>? company =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('เกี่ยวกับเรา'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text("Durbell"),
+            //  Text(company['email']),
+            //  Text(company['phone']),
+            if (company != null) ...[
+              Text(company['email']),
+              Text(company['phone']),
+            ] else ...[
+              const Text('ไม่มีข้อมูลบริษัท'),
+            ],
+
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('กลับหน้าหลัก'),
+            ),
+            const SizedBox(
+              width: 5,
+              height: 5,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/contact');
+              },
+              child: const Text('ติดค่อเรา'),
+            ),
+            const SizedBox(
+              width: 5,
+              height: 5,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
