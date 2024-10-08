@@ -24,16 +24,19 @@ class _AboutPageState extends State<AboutPage> {
             const Text("Durbell"),
             //  Text(company['email']),
             //  Text(company['phone']),
+            const Divider(
+              height: 20,
+            ),
             if (company != null) ...[
-              Text(company['email']),
-              Text(company['phone']),
+              Text('Email: ${company['email']}'),
+              Text('Tel: ${company['phone']}'),
             ] else ...[
               const Text('ไม่มีข้อมูลบริษัท'),
             ],
 
             ElevatedButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.pop(context, 'About Page...');
               },
               child: const Text('กลับหน้าหลัก'),
             ),
