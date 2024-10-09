@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var fromAbout; //dynamic
+  dynamic fromAbout; //dynamic
 
   @override
   Widget build(BuildContext context) {
