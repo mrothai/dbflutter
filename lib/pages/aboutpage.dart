@@ -46,7 +46,7 @@ class _AboutPageState extends State<AboutPage> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/contact');
+                Navigator.pushNamed(context, 'homestack/contact');
               },
               child: const Text('ติดค่อเรา'),
             ),

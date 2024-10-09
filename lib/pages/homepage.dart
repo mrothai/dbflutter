@@ -31,11 +31,12 @@ class _HomePageState extends State<HomePage> {
             ),
             ElevatedButton(
               onPressed: () async {
-                fromAbout =
-                    await Navigator.pushNamed(context, '/about', arguments: {
-                  'email': "porntep@gmail.com",
-                  'phone': "1234567890",
-                });
+                fromAbout = await Navigator.pushNamed(
+                    context, 'homestack/about',
+                    arguments: {
+                      'email': "porntep@gmail.com",
+                      'phone': "1234567890",
+                    });
                 setState(() {
                   fromAbout = fromAbout;
                 });

@@ -12,7 +12,7 @@ class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.85,
+      width: MediaQuery.of(context).size.width * 0.7,
       child: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -22,7 +22,7 @@ class _MenuState extends State<Menu> {
                 color: Colors.purple,
               ),
               child: Text(
-                'Drawer Header',
+                'DB',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,

@@ -1,6 +1,7 @@
 import 'package:dbflutter/pages/aboutpage.dart';
 import 'package:dbflutter/pages/contactpage.dart';
 import 'package:dbflutter/pages/homepage.dart';
+import 'package:dbflutter/pages/homestack.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,9 +24,11 @@ class MyApp extends StatelessWidget {
       //home: const HomePage(),
       initialRoute: "/",
       routes: {
-        "/": (context) => const HomePage(),
-        "/about": (context) => const AboutPage(),
-        '/contact': (context) => const ContactPage(),
+        //"/": (context) => const HomePage(),
+        //"/about": (context) => const AboutPage(),
+        //'/contact': (context) => const ContactPage(),
+        // เลปี่ยนไปใช้ HomeStack แทน
+        "/": (context) => const HomeStack(),
       },
     );
   }

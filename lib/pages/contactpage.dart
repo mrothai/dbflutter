@@ -22,11 +22,13 @@ class _ContactPageState extends State<ContactPage> {
             const Text("Durbell"),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushAndRemoveUntil(
+                /*   Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(builder: (context) => const HomePage()),
                   (route) => false,
-                );
+                ); */
+                Navigator.pushNamedAndRemoveUntil(
+                    context, 'homestack/home', (Route<dynamic> route) => false);
               },
               child: const Text('กลับหน้าหลัก'),
             ),
