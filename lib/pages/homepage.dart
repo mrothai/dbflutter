@@ -19,18 +19,53 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Dev'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/bg.png'), fit: BoxFit.cover),
+        ),
+        child: GridView.count(
+          primary: false,
+          padding: const EdgeInsets.all(20),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          crossAxisCount: 2,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.white70,
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.business, size: 80, color: Colors.purple),
+                  Text('บริษัท', style: TextStyle(fontSize: 20)),
+                ],
+              ),
             ),
-            Text(
-              'from about page is ${fromAbout ?? ''}', // กำหนดหาก fromAbout เป็น null ให้แสดงค่าว่าง
+            Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.white70,
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.map, size: 80, color: Colors.purple),
+                  Text('แผนที่', style: TextStyle(fontSize: 20)),
+                ],
+              ),
             ),
-            ElevatedButton(
-              onPressed: () async {
+            Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.white70,
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.camera, size: 80, color: Colors.purple),
+                  Text('กล้อง', style: TextStyle(fontSize: 20)),
+                ],
+              ),
+            ),
+            GestureDetector(
+              onTap: () async {
                 fromAbout = await Navigator.pushNamed(
                     context, 'homestack/about',
                     arguments: {
@@ -41,7 +76,19 @@ class _HomePageState extends State<HomePage> {
                   fromAbout = fromAbout;
                 });
               },
-              child: const Text('เกี่ยวกับเรา'),
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                color: Colors.white70,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.person, size: 80, color: Colors.purple),
+                    Text('เกี่ยวกับ ${fromAbout ?? ''}',
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(fontSize: 20)),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
