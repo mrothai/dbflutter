@@ -31,15 +31,20 @@ class _HomePageState extends State<HomePage> {
           mainAxisSpacing: 10,
           crossAxisCount: 2,
           children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.white70,
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.business, size: 80, color: Colors.purple),
-                  Text('บริษัท', style: TextStyle(fontSize: 20)),
-                ],
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, 'homestack/company');
+              },
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                color: Colors.white70,
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.business, size: 80, color: Colors.purple),
+                    Text('บริษัท', style: TextStyle(fontSize: 20)),
+                  ],
+                ),
               ),
             ),
             Container(
